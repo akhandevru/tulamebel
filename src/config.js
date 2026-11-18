@@ -5,13 +5,16 @@
 
    Фото: можно указать
      • ссылку из интернета:      "https://…/photo.jpg"
-     • свой файл из папки public/images: "/images/sofa.jpg"
+     • свой файл из папки public/images: IMG + "sofa.jpg"
    Пустая строка / пустой список = блок скрывается автоматически.
 
    Данные «Туламебель» взяты из карточек магазина в 2ГИС и Яндекс Картах,
    фото в каталоге оттуда же; остальные фото бесплатные, с Unsplash. Названия моделей описательные, цены не указаны:
    магазин впишет свои названия и цены (поле price) сам.
    ===================================================================== */
+
+// Папка с фото с учётом адреса сайта: локально "/images/", на GitHub Pages "/tulamebel/images/"
+const IMG = import.meta.env.BASE_URL + "images/";
 
 // Варианты исполнения для диванов: показываются в карточке товара
 const SOFA_OPTIONS = {
@@ -36,7 +39,7 @@ const SITE = {
     title: "Туламебель — мебельный магазин в Туле, Красноармейский проспект, 19",
     description:
       "Диваны, кухонные уголки, кухни, шкафы и матрасы. Зал на Красноармейском, 19. Бесплатная доставка до подъезда, ткань под заказ, рассрочка.",
-    image: "/images/hero-1.jpg",
+    image: IMG + "hero-1.jpg",
   },
 
   /* ---------- ЦВЕТА И ШРИФТЫ ---------- */
@@ -98,17 +101,17 @@ const SITE = {
   hero: {
     slides: [
       {
-        image: "/images/hero-1.jpg",
+        image: IMG + "hero-1.jpg",
         title: "Мебель в Туле,<br>которую можно посмотреть вживую",
         subtitle: "Диваны, кухни, шкафы и матрасы в зале на Красноармейском, 19",
       },
       {
-        image: "/images/hero-2.jpg",
+        image: IMG + "hero-2.jpg",
         title: "Ткань и цвет<br>под ваш интерьер",
         subtitle: "Много образцов в зале. Под заказ около трёх недель",
       },
       {
-        image: "/images/hero-3.jpg",
+        image: IMG + "hero-3.jpg",
         title: "Доставка до подъезда<br>бесплатно",
         subtitle: "Если модель есть в наличии, привезём в день покупки",
       },
@@ -125,14 +128,14 @@ const SITE = {
       "Туламебель — мебельный магазин на Красноармейском проспекте. В зале стоят диваны, кухонные уголки, шкафы, стенки, комоды и матрасы от разных фабрик, от эконома до среднего сегмента.",
       "Консультант поможет выбрать модель по размеру, наполнителю и механизму. Если нужна другая ткань или цвет, сделаем под заказ. Часть мебели есть в наличии, остальное привезём.",
     ],
-    image: "/images/about.jpg",
+    image: IMG + "about.jpg",
     stats: [],
   },
 
   /* ---------- КАТЕГОРИИ ---------- */
   categories: [
-    { id: "sofas", name: "Диваны", image: "/images/sofa-light-weave.jpg" },
-    { id: "kitchen-corners", name: "Кухонные уголки", image: "/images/kitchen-corner-leather.jpg" },
+    { id: "sofas", name: "Диваны", image: IMG + "sofa-light-weave.jpg" },
+    { id: "kitchen-corners", name: "Кухонные уголки", image: IMG + "kitchen-corner-leather.jpg" },
   ],
 
   /* ---------- КАТАЛОГ ТОВАРОВ ----------
@@ -146,7 +149,7 @@ const SITE = {
       id: "sofa-piping",
       name: "Диван с кантом и подушками",
       category: "sofas",
-      images: ["/images/sofa-pillows-grey.jpg"],
+      images: [IMG + "sofa-pillows-grey.jpg"],
       description: "Прямой диван в мягком велюре с белым кантом и пятью декоративными подушками. Снизу ящик для белья.",
       specs: SOFA_OPTIONS,
     },
@@ -155,7 +158,7 @@ const SITE = {
       name: "Диван со стёжкой и накладками",
       category: "sofas",
       badge: "В зале",
-      images: ["/images/sofa-wood-arms.jpg"],
+      images: [IMG + "sofa-wood-arms.jpg"],
       description: "Прямой диван со стёгаными подушками и тёмными накладками на подлокотниках.",
       specs: SOFA_OPTIONS,
     },
@@ -163,7 +166,7 @@ const SITE = {
       id: "sofa-olive",
       name: "Диван с тёмными боковинами, олива",
       category: "sofas",
-      images: ["/images/sofa-olive.jpg"],
+      images: [IMG + "sofa-olive.jpg"],
       description: "Прямой диван с комбинированной обивкой: оливковая ткань и тёмные боковины.",
       specs: SOFA_OPTIONS,
     },
@@ -171,7 +174,7 @@ const SITE = {
       id: "sofa-lilac",
       name: "Диван с тёмными боковинами, сирень",
       category: "sofas",
-      images: ["/images/sofa-lilac.jpg"],
+      images: [IMG + "sofa-lilac.jpg"],
       description: "Та же модель в сиреневой ткани. Цвет обивки можно поменять под заказ.",
       specs: SOFA_OPTIONS,
     },
@@ -179,7 +182,7 @@ const SITE = {
       id: "sofa-brown",
       name: "Диван с объёмными подушками",
       category: "sofas",
-      images: ["/images/sofa-brown-velour.jpg"],
+      images: [IMG + "sofa-brown-velour.jpg"],
       description: "Прямой диван в коричневом велюре с крупными стёгаными подушками.",
       specs: SOFA_OPTIONS,
     },
@@ -187,7 +190,7 @@ const SITE = {
       id: "sofa-stitch",
       name: "Диван со строчкой на сиденье",
       category: "sofas",
-      images: ["/images/sofa-light-weave.jpg"],
+      images: [IMG + "sofa-light-weave.jpg"],
       description: "Прямой диван в светлой ткани с декоративной строчкой.",
       specs: SOFA_OPTIONS,
     },
@@ -195,7 +198,7 @@ const SITE = {
       id: "sofa-copper",
       name: "Диван в медном оттенке",
       category: "sofas",
-      images: ["/images/sofa-rust-velour.jpg"],
+      images: [IMG + "sofa-rust-velour.jpg"],
       description: "Прямой диван в фактурной ткани тёплого медного оттенка.",
       specs: SOFA_OPTIONS,
     },
@@ -203,7 +206,7 @@ const SITE = {
       id: "kitchen-corner",
       name: "Кухонный уголок со стёжкой",
       category: "kitchen-corners",
-      images: ["/images/kitchen-corner-leather.jpg"],
+      images: [IMG + "kitchen-corner-leather.jpg"],
       description: "Угловой кухонный диван из экокожи с каретной стёжкой. Под сиденьем ящики для хранения.",
       specs: {
         "Обивка": "экокожа, велюр, рогожка",
@@ -216,7 +219,7 @@ const SITE = {
       id: "sofa-compact",
       name: "Диван с узкими подлокотниками",
       category: "sofas",
-      images: ["/images/sofa-book-light.jpg"],
+      images: [IMG + "sofa-book-light.jpg"],
       description: "Компактный прямой диван в светлой ткани, подойдёт для небольшой комнаты.",
       specs: SOFA_OPTIONS,
     },
@@ -224,7 +227,7 @@ const SITE = {
       id: "sofa-bright",
       name: "Диван со стёжкой, яркий велюр",
       category: "sofas",
-      images: ["/images/sofa-lime.jpg"],
+      images: [IMG + "sofa-lime.jpg"],
       description: "Прямой диван со стёгаными подушками в спинке. Яркий велюр, можно заказать в спокойном цвете.",
       specs: SOFA_OPTIONS,
     },
@@ -235,13 +238,13 @@ const SITE = {
     {
       title: "Кухни и обеденные зоны",
       text: "В магазине отдельный отдел кухонной мебели. Позвоните, чтобы узнать, что есть в наличии и что можно заказать: +7 (952) 016-00-90.",
-      image: "/images/kitchens.jpg",
+      image: IMG + "kitchens.jpg",
       button: { label: "Позвонить в отдел кухонь", href: "tel:+79520160090" },
     },
     {
       title: "Шкафы, стенки, комоды и матрасы",
       text: "Корпусная мебель для спальни, гостиной и прихожей. Матрасы стоят в зале, на них можно полежать перед покупкой.",
-      image: "/images/bedroom.jpg",
+      image: IMG + "bedroom.jpg",
       button: { label: "Попросить фото в WhatsApp", href: "https://wa.me/79509126353?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%B8%D1%88%D0%BB%D0%B8%D1%82%D0%B5%20%D1%84%D0%BE%D1%82%D0%BE%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B8." },
     },
   ],
