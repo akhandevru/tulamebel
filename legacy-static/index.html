@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мебель</title>
+  <meta name="description" content="">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- Весь контент сайта: config.js -->
+  <script src="config.js"></script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" id="logo"></a>
+      <nav class="nav" id="nav" aria-label="Основное меню"></nav>
+      <div class="header__actions">
+        <a class="header__phone" id="headerPhone"></a>
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav" id="mobileNav"></nav>
+    <div class="mobile-menu__contacts" id="mobileContacts"></div>
+  </div>
+
+  <main id="top"></main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <!-- Карточка товара -->
+  <div class="modal" id="productModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close aria-label="Закрыть">&times;</button>
+      <div class="modal__body" id="productBody"></div>
+    </div>
+  </div>
+
+  <!-- Просмотр фото -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox__close" data-close aria-label="Закрыть">&times;</button>
+    <button class="lightbox__arrow lightbox__arrow--prev" data-dir="-1">Назад</button>
+    <figure class="lightbox__figure">
+      <img id="lightboxImg" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox__arrow lightbox__arrow--next" data-dir="1">Далее</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a class="float-btn" id="floatBtn" target="_blank" rel="noopener" aria-label="Написать нам"></a>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
