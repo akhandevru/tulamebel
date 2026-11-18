@@ -89,7 +89,21 @@ WhatsApp ___, Telegram ___, Instagram ___, ВК ___.
 - `"email"` открывает почтовую программу
 - `"formspree"` отправляет заявку на почту без перехода. Зарегистрируйтесь на formspree.io и вставьте ссылку в `formEndpoint`
 
-## Публикация
+## Публикация на GitHub Pages (этот сайт)
+
+Сайт публикуется из ветки `main`, папка `/docs` (Settings, Pages, Branch: main, /docs).
+После правок соберите сайт и запушьте вместе с папкой `docs/`:
+
+```bash
+npm run build
+git add -A
+git commit -m "Обновление сайта"
+git push
+```
+
+Адрес: https://akhandevru.github.io/tulamebel/. Подпапка `/tulamebel/` задана в `vite.config.js` (`base`).
+
+## Публикация на другой хостинг
 
 Выполните `npm run build` и загрузите папку `dist/` на любой хостинг: Vercel, Netlify, GitHub Pages, обычный хостинг по FTP. Vercel и Netlify умеют собирать проект сами: укажите команду `npm run build` и папку `dist`.
 
